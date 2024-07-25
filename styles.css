@@ -1,0 +1,128 @@
+/* styles.css */
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1em 2em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInText 3s infinite;
+}
+
+@keyframes fadeInText {
+    0%, 100% {
+        opacity: 1;
+        color: #007bff;
+    }
+    35% {
+        opacity: 0.5;
+        color: #000000;
+    }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+    background: #007bff;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 2em;
+}
+
+section {
+    background: #fff;
+    margin-bottom: 2em;
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section.hidden {
+    display: none;
+    opacity: 0;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    margin-top: 0;
+    font-weight: 400;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+article h3 {
+    font-weight: 500;
+    margin-top: 0;
+}
